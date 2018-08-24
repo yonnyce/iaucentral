@@ -13,6 +13,13 @@ public abstract class BusquedaAbstracta<T> {
 		init();
 	}
 
+	/**
+	 * Se encarga de generar los nodos hijos apartir del nodo padre, en esta funcion
+	 * se definen todas la reglas necesarias que seran aplicadas a cada nodo
+	 * 
+	 * @param tNodo
+	 * @return listado con los nodos hijos
+	 */
 	public abstract List<T> obtenerNodosHijo(T tNodo);
 
 	public void init() {

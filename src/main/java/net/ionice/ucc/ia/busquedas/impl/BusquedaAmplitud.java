@@ -16,6 +16,17 @@ public class BusquedaAmplitud extends BusquedaAbstracta<Nodo> {
 
 	}
 
+	/**
+	 * Se encarga de girar el estado actual (arreglo) desde el indice indicado,
+	 * ejemplo: {1,2,5,4,3} girando desde la posicion 2, el resultado seria el
+	 * siguiente: {1,2,3,4,5}
+	 * 
+	 * @param nodo
+	 *            nodo que contiene el estado a girar
+	 * @param indice
+	 *            posicion desde la cual se va a realizar el giro
+	 * @return
+	 */
 	public Nodo flipEstado(Nodo nodo, int indice) {
 
 		if (indice >= nodo.getEstado().getNumeros().length) {
@@ -58,6 +69,14 @@ public class BusquedaAmplitud extends BusquedaAbstracta<Nodo> {
 		return nodosHijo;
 	}
 
+	/**
+	 * Inicializa la busqueda con el nodo inicial definido y el nodo objetivo
+	 * 
+	 * @param inicial
+	 * @param objetivo
+	 * @return el nodo solucion del problema, o null en caso de que se recorra el
+	 *         arbol y no se encuentre la solucion
+	 */
 	public Nodo realizarBusqueda(Nodo inicial, Nodo objetivo) {
 
 		this.busquedaConfigurable.setNodoInicial(inicial);

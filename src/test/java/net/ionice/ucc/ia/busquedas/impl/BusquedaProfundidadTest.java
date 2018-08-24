@@ -34,7 +34,7 @@ public class BusquedaProfundidadTest {
 
 		Nodo nodoResultadoAmplitud = this.busquedaProfundidad.realizarBusqueda(nodoInicial, objetivo);
 
-		System.out.println("solucion amplitud");
+		System.out.println("solucion profundidad");
 		while (nodoResultadoAmplitud != null) {
 			System.out.println(nodoResultadoAmplitud.toString());
 			nodoResultadoAmplitud = nodoResultadoAmplitud.getPadre();
