@@ -7,11 +7,11 @@ import net.ionice.ucc.ia.busquedas.impl.BusquedaAbstracta;
 import net.ionice.ucc.ia.model.Estado;
 import net.ionice.ucc.ia.model.Nodo;
 
-public class BusquedaAmplitud extends BusquedaAbstracta<Nodo> {
+public class BusquedaProfundidad extends BusquedaAbstracta<Nodo> {
 
 	int nivelMaximo;
 
-	public BusquedaAmplitud(int nivelMaximo) {
+	public BusquedaProfundidad(int nivelMaximo) {
 		this.nivelMaximo = nivelMaximo;
 
 	}
@@ -62,6 +62,7 @@ public class BusquedaAmplitud extends BusquedaAbstracta<Nodo> {
 
 		this.busquedaConfigurable.setNodoInicial(inicial);
 		this.busquedaConfigurable.setNodoObjetivo(objetivo);
+		this.busquedaConfigurable.setProfundidad(true);
 
 		if (this.busquedaConfigurable.iniciarBusqueda()) {
 			System.out.println("generados amplitud " + this.busquedaConfigurable.getNodosGenerados().size());

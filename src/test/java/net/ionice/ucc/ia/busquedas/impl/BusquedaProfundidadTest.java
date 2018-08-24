@@ -10,13 +10,12 @@ import org.junit.Test;
 import net.ionice.ucc.ia.model.Estado;
 import net.ionice.ucc.ia.model.Nodo;
 
-public class BusquedaAmplitudTest {
-
-	private BusquedaAmplitud busquedaAmplitud;
+public class BusquedaProfundidadTest {
+	private BusquedaProfundidad busquedaProfundidad;
 
 	@Before
 	public void initTest() {
-		busquedaAmplitud = new BusquedaAmplitud(8);
+		busquedaProfundidad = new BusquedaProfundidad(8);
 	}
 
 	@Test
@@ -33,7 +32,7 @@ public class BusquedaAmplitudTest {
 		Nodo objetivo = new Nodo();
 		objetivo.setEstado(new Estado(resultadoObjetivo));
 
-		Nodo nodoResultadoAmplitud = this.busquedaAmplitud.realizarBusqueda(nodoInicial, objetivo);
+		Nodo nodoResultadoAmplitud = this.busquedaProfundidad.realizarBusqueda(nodoInicial, objetivo);
 
 		System.out.println("solucion amplitud");
 		while (nodoResultadoAmplitud != null) {
@@ -56,7 +55,7 @@ public class BusquedaAmplitudTest {
 		nodo.setNivel(0);
 		nodo.setPadre(null);
 
-		Nodo nodoResultado = busquedaAmplitud.flipEstado(nodo, 5);
+		Nodo nodoResultado = busquedaProfundidad.flipEstado(nodo, 5);
 
 		int[] resultadoEsperado = { 1, 2, 3, 4, 5, 10, 9, 8, 7, 6 };
 

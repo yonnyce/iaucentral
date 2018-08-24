@@ -6,11 +6,9 @@ import java.util.function.Function;
 public abstract class BusquedaAbstracta<T> {
 
 	BusquedaConfigurable<T> busquedaConfigurable;
-	int nivelMaximo;
 
 	public BusquedaAbstracta() {
 		this.busquedaConfigurable = new BusquedaConfigurable<>();
-		this.nivelMaximo = 8;
 
 		init();
 	}
