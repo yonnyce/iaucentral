@@ -94,10 +94,10 @@ public class BusquedaAmplitud extends BusquedaAbstracta<Nodo> {
 	 * @return el nodo solucion del problema, o null en caso de que se recorra el
 	 *         arbol y no se encuentre la solucion
 	 */
-	public Nodo realizarBusqueda(Nodo inicial, Nodo objetivo) {
+	public Nodo realizarBusqueda(Nodo inicial) {
 
 		this.busquedaConfigurable.setNodoInicial(inicial);
-		this.busquedaConfigurable.setNodoObjetivo(objetivo);
+		
 
 		if (this.busquedaConfigurable.iniciarBusqueda()) {
 			System.out.println("generados amplitud " + this.busquedaConfigurable.getNodosGenerados().size());

@@ -27,12 +27,7 @@ public class BusquedaProfundidadTest {
 		nodoInicial.setEstado(new Estado(numeros));
 		nodoInicial.setNivel(0);
 		nodoInicial.setPadre(null);
-		int[] resultadoObjetivo = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-
-		Nodo objetivo = new Nodo();
-		objetivo.setEstado(new Estado(resultadoObjetivo));
-
-		Nodo nodoResultadoAmplitud = this.busquedaProfundidad.realizarBusqueda(nodoInicial, objetivo);
+		Nodo nodoResultadoAmplitud = this.busquedaProfundidad.realizarBusqueda(nodoInicial);
 
 		System.out.println("solucion profundidad");
 		while (nodoResultadoAmplitud != null) {

@@ -74,10 +74,9 @@ public class BusquedaProfundidad extends BusquedaAbstracta<Nodo> {
 		return true;
 	}
 
-	public Nodo realizarBusqueda(Nodo inicial, Nodo objetivo) {
+	public Nodo realizarBusqueda(Nodo inicial) {
 
 		this.busquedaConfigurable.setNodoInicial(inicial);
-		this.busquedaConfigurable.setNodoObjetivo(objetivo);
 		this.busquedaConfigurable.setProfundidad(true);
 
 		if (this.busquedaConfigurable.iniciarBusqueda()) {
