@@ -84,4 +84,10 @@ public interface IBusqueda<T> {
 	 */
 	List<T> getNodosAbiertos();
 
+	/**
+	 * Especifica la funcion que se encargara de evaluar los nodos
+	 * 
+	 * @param funcSolucion
+	 */
+	void setSolucionFunc(Function<T, Boolean> funcSolucion);
 }

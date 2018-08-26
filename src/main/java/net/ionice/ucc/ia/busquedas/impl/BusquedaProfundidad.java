@@ -58,6 +58,22 @@ public class BusquedaProfundidad extends BusquedaAbstracta<Nodo> {
 		return nodosHijo;
 	}
 
+	@Override
+	public boolean esSolucion(Nodo tNodo) {
+
+		if (tNodo.getEstado().getNumeros().length <= 1) {
+			return true;
+		}
+
+		for (int i = 1; i < tNodo.getEstado().getNumeros().length; i++) {
+			if (tNodo.getEstado().getNumeros()[i] < tNodo.getEstado().getNumeros()[i - 1]) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 	public Nodo realizarBusqueda(Nodo inicial, Nodo objetivo) {
 
 		this.busquedaConfigurable.setNodoInicial(inicial);

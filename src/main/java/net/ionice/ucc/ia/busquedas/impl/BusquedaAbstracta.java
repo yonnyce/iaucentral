@@ -22,13 +22,20 @@ public abstract class BusquedaAbstracta<T> {
 	 */
 	public abstract List<T> obtenerNodosHijo(T tNodo);
 
+	public abstract boolean esSolucion(T tNodo);
+
 	public void init() {
 
 		Function<T, List<T>> funcObtenerHijos = nodo -> {
 			return obtenerNodosHijo(nodo);
 		};
 
+		Function<T, Boolean> funcEvaluarNodo = nodo -> {
+			return esSolucion(nodo);
+		};
+
 		busquedaConfigurable.setFuncObtenerHijos(funcObtenerHijos);
+		busquedaConfigurable.setSolucionFunc(funcEvaluarNodo);
 	}
 
 }

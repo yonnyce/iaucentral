@@ -19,6 +19,8 @@ public class BusquedaConfigurable<T> implements IBusqueda<T> {
 	LinkedList<T> nodosAbiertos;
 	Set<T> hashGenerados;
 
+	Function<T, Boolean> funcSolucion;
+
 	Function<T, List<T>> funcObtenerHijos;
 
 	T nodoInicial;
@@ -37,7 +39,7 @@ public class BusquedaConfigurable<T> implements IBusqueda<T> {
 
 	private T buscarSolucion() {
 
-		if (nodoInicial.equals(nodoObjetivo)) {
+		if (funcSolucion.apply(nodoInicial)) {
 			return nodoInicial;
 		}
 
@@ -52,8 +54,10 @@ public class BusquedaConfigurable<T> implements IBusqueda<T> {
 
 			nodosSucesores.addAll(funcObtenerHijos.apply(tNodo));
 
-			if (nodosSucesores.contains(nodoObjetivo)) {
-				return nodosSucesores.get(nodosSucesores.indexOf(nodoObjetivo));
+			for (T t : nodosSucesores) {
+				if (funcSolucion.apply(t)) {
+					return t;
+				}
 			}
 
 			if (profundidad) {
@@ -134,6 +138,11 @@ public class BusquedaConfigurable<T> implements IBusqueda<T> {
 	@Override
 	public List<T> getNodosAbiertos() {
 		return this.nodosAbiertos;
+	}
+
+	@Override
+	public void setSolucionFunc(Function<T, Boolean> funcSolucion) {
+		this.funcSolucion = funcSolucion;
 	}
 
 }
